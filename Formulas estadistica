@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main(){
+float n,m,r,b,sumax,sumay,medx,medy,x,y,xy,X,Y;
+cout<<"introduce dias: ";
+cin>>n;
+float dia[8]={1,2,3,4,5,6,7,8};
+float ven[8]={23,15,30,25,42,35,20,40};
+for(int i=0;i<n;i++)
+{
+cout<<dia[i]<<" ";
+sumax=sumax+dia[i];
+medx = sumax;
+}
+cout<<endl;
+x=medx/n;
+for(int i=0;i<n;i++)
+{
+    cout<<ven[i]<<" ";
+    sumay=sumay+ven[i];
+    medy=sumay;
+}
+y=medy/n;
+for(int i=0;i<n;i++)
+{
+    xy=xy+dia[i]*ven[i];
+}
+for(int i=0;i<n;i++)
+{
+    r=r+pow(dia[i],2);
+}
+m=(xy-(medx*medy/n))/(r-(pow (medx,2)/n));
+b=y-m*x;
+cout<<endl<<"dia a preveer: ";
+cin>>X;
+Y=m*X+b;
+cout<<"La prediccion sera de: "<<Y<<endl;
+return 0;
+}
