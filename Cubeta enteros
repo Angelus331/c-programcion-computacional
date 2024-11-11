@@ -1,0 +1,44 @@
+#include <iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+    int n, cubeta=18, maxcubetas=18;
+    int maximo =100;
+    cin>>n;
+    int num[]={4,7,8,1,0,6,9,8,2,6,3,4,1,0,5,3,9,2};
+    cout<<"El que lo critica: ";
+    for(int i=0;i<n;i++)
+    {
+    cout<<num[i]<<" ";
+    }
+    int balde[cubeta][maxcubetas]={0};
+    int baldecont[cubeta]={0};
+    int rango=(maximo/cubeta)+1;
+    for(int i =0;i<n;i++)
+    {
+        int cubin =cubeta/rango;
+        balde[cubin][baldecont[cubin]++]= num[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        sort(balde[i],balde[i]+baldecont[i]);
+    }
+    int ind=0;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<baldecont[i];j++)
+        {
+            num[ind++]= balde[i][j];
+        }
+    }
+    cout<<endl<<"El acabado: ";
+    for(int i=0;i<n;i++)
+    {
+        cout<<num[i]<<" ";
+    }
+    cout <<endl;
+return 0;
+}
+
+
+
