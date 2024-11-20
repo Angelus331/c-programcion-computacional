@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n=5,fin=1;
+    int arr[n][n];
+    for (int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            arr[i][j]=fin;
+            fin++;
+            cout<<arr[i][j]<<"\t";
+    }
+        cout<<endl;
+    }
+    cout<<endl;
+    for (int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            int temp =arr[i][i];
+            arr[i][i]=arr[i][n-1-i];
+            arr[i][n-1-i]=temp;
+            }
+        cout<<endl;
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << arr[i][j] << "\t";
+        }
+        cout << endl;
+    }
+    return 0;
+}
