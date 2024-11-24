@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int TAM = 5;
+    int matriz[TAM][TAM];
+    int fin=1;
+    int sumaCen = 0, sumaMed = 0;
+    cout << "Ingrese los elementos de la matriz " << TAM << "x" << TAM << ":\n";
+    for (int i = 0; i < TAM; i++) {
+        for (int j = 0; j < TAM; j++) {
+            matriz[i][j]=fin;
+            fin++;
+            cout << matriz[i][j]<< "\t";
+        }
+        cout<< endl;
+    }
+    for (int i = 0; i < TAM; i++) {
+        sumaCen += matriz[i][2]; 
+        sumaMed += matriz[i][TAM - 2 ]; 
+    }
+
+    int sumaT=sumaCen+sumaMed;
+    cout << "Suma de la fila del medio: " << sumaCen << endl;
+    cout << "Suma de la columna del medio: " << sumaMed << endl;
+    cout << "Suma total de la diagonal es: " << sumaT<<endl;
+    int temp =matriz[TAM/2][TAM/2];
+        matriz[TAM/2][TAM/2]=sumaT;
+        sumaT=temp;
+    for (int i = 0; i < TAM; i++) {
+        for (int j = 0; j < TAM; j++) {
+                cout << matriz[i][j]<< "\t";
+        }
+        cout<< endl;
+    }
+
+    return 0;
+}
