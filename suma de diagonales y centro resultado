@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main() {
-    int TAM = 11;
+    int TAM = 11;//SE PUEDE CAMBIAR A CUALQUIER VALOR
     int matriz[TAM][TAM];
     int fin=1;
     int sumaDP = 0, sumaDS = 0;
