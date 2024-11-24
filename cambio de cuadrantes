@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int TAM = 4; 
+    int fin=1;
+    int matriz[TAM][TAM]; 
+    cout << "Ingrese los elementos de la matriz (4x4):" << endl;
+    for (int i=0; i<TAM ; i++) {
+        for (int j = 0; j < TAM; j++) {
+            matriz[i][j]=fin;
+            fin++;
+            cout << matriz[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    for (int i=0; i<TAM/2 ;i++) {
+        for (int j=0; j<TAM/2;j++) {
+            int temp = matriz[i][j]; 
+            matriz[i][j] = matriz[i][j+TAM/2]; 
+            matriz[i][j+TAM/2] = temp; 
+        }
+    }
+     for (int i=TAM/2; i<TAM ; i++) {
+        for (int j=0; j<TAM/2 ; j++) {
+            int temp = matriz[i][j]; 
+            matriz[i][j] = matriz[i][j+TAM/2];
+            matriz[i][j+TAM/2] = temp;
+        }
+    }
+    cout << "Con el cambio la matriz seria: "  << endl;
+    for (int i = 0; i < TAM; i++) {
+        for (int j = 0; j < TAM; j++) {
+            cout << matriz[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
