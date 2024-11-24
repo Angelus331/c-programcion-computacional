@@ -15,14 +15,14 @@ int main() {
         cout<< endl;
     }
     for (int i = 0; i < TAM; i++) {
-        sumaCen += matriz[i][2]; 
+        sumaCen += matriz[i][TAM/2]; 
         sumaMed += matriz[i][TAM - 2 ]; 
     }
 
     int sumaT=sumaCen+sumaMed;
     cout << "Suma de la fila del medio: " << sumaCen << endl;
     cout << "Suma de la columna del medio: " << sumaMed << endl;
-    cout << "Suma total de la diagonal es: " << sumaT<<endl;
+    cout << "Suma total de la cruz es: " << sumaT<<endl;
     int temp =matriz[TAM/2][TAM/2];
         matriz[TAM/2][TAM/2]=sumaT;
         sumaT=temp;
