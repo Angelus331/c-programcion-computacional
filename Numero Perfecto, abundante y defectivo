@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int Divisores(int num) {
+    int suma = 0;
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            suma += i;
+        }
+    }
+    return suma;
+}
+int main() {
+    int n;
+    cout << "Introduce un número: ";
+    cin >> n;
+    cout << "Clasificación de números del 1 al " << n << ":\n";
+    for (int j = 1; j <= n; j++) {
+        int suma = Divisores(j);
+        if (suma < j) {
+            cout << j << " es un número defectivo." << endl;
+        } else if (suma == j) {
+            cout << j << " es un número perfecto." << endl;
+        } else {
+            cout << j << " es un número abundante." << endl;
+        }
+    }
+    return 0;
+}
